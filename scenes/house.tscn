@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqv04x26b4srv"]
+
+[ext_resource type="Texture2D" uid="uid://0t467sws3qsa" path="res://assets/street_animations/house/house1.png" id="1_g43a6"]
+[ext_resource type="Script" path="res://scripts/house.gd" id="1_lx40i"]
+[ext_resource type="PackedScene" uid="uid://bcdqa3nvlphtm" path="res://scenes/door_trigger.tscn" id="2_5ty2o"]
+[ext_resource type="Texture2D" uid="uid://cr1jjw48uxqm3" path="res://assets/street_animations/house/house2.png" id="4_2kopm"]
+[ext_resource type="Texture2D" uid="uid://caegjwc7wfpad" path="res://assets/street_animations/house/house3.png" id="5_pvqr4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7urwl"]
+size = Vector2(46, 44)
+
+[sub_resource type="Animation" id="Animation_lgvgt"]
+resource_name = "open"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_g43a6"), ExtResource("4_2kopm"), ExtResource("5_pvqr4")]
+}
+
+[sub_resource type="Animation" id="Animation_dmtaw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_g43a6")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7d28f"]
+_data = {
+"RESET": SubResource("Animation_dmtaw"),
+"open": SubResource("Animation_lgvgt")
+}
+
+[node name="House" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_lx40i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g43a6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_7urwl")
+
+[node name="door_trigger" parent="." instance=ExtResource("2_5ty2o")]
+
+[node name="CollisionShape2D" parent="door_trigger" index="0"]
+position = Vector2(-0.5, 14.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7d28f")
+}
+
+[connection signal="body_entered" from="door_trigger" to="." method="_on_door_trigger_body_entered"]
+
+[editable path="door_trigger"]

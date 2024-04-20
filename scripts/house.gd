@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var connected_scene: String = "res://scenes/shop_indoors.tscn"
+var connected_scene: String = "res://scenes/house_indoors.tscn"
 
 
 func _on_door_trigger_body_entered(body: Node2D) -> void:

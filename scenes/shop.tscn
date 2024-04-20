@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://deoqhd0i3md73" path="res://assets/street_animations/shop/shop1.png" id="1_iwbyo"]
 [ext_resource type="Texture2D" uid="uid://dgqm51xxhbi2b" path="res://assets/street_animations/shop/shop2.png" id="2_vcrx1"]
 [ext_resource type="Texture2D" uid="uid://dvqxw0oib805q" path="res://assets/street_animations/shop/shop3.png" id="3_4akuf"]
+[ext_resource type="PackedScene" uid="uid://bcdqa3nvlphtm" path="res://scenes/door_trigger.tscn" id="5_gdr2p"]
 
 [sub_resource type="Animation" id="Animation_3ac3t"]
 length = 0.001
@@ -42,9 +43,6 @@ _data = {
 "open": SubResource("Animation_5mcol")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3d83c"]
-size = Vector2(22, 15)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gtybj"]
 size = Vector2(62, 46)
 
@@ -62,16 +60,12 @@ libraries = {
 "": SubResource("AnimationLibrary_pv5l4")
 }
 
-[node name="door_trigger" type="Area2D" parent="."]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door_trigger"]
-position = Vector2(-3, 16)
-shape = SubResource("RectangleShape2D_3d83c")
-debug_color = Color(0.717647, 0.482353, 0.0941176, 0.419608)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, -1)
 shape = SubResource("RectangleShape2D_gtybj")
 
-[connection signal="body_entered" from="door_trigger" to="." method="_on_area_2d_body_entered"]
+[node name="door_trigger" parent="." instance=ExtResource("5_gdr2p")]
+
+[connection signal="body_entered" from="door_trigger" to="." method="_on_door_trigger_body_entered"]
+
+[editable path="door_trigger"]
