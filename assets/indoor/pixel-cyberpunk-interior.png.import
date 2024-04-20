@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blnbcod1cue7s"
-path="res://.godot/imported/roguelikeIndoor_transparent.png-5d8dddfc99e3816e4c228fd8ad2bccf5.ctex"
+uid="uid://y01s7qhgik14"
+path="res://.godot/imported/pixel-cyberpunk-interior.png-8807c58401e0dc07cbed8907fbcc25fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/indoor/roguelikeIndoor_transparent.png"
-dest_files=["res://.godot/imported/roguelikeIndoor_transparent.png-5d8dddfc99e3816e4c228fd8ad2bccf5.ctex"]
+source_file="res://assets/indoor/pixel-cyberpunk-interior.png"
+dest_files=["res://.godot/imported/pixel-cyberpunk-interior.png-8807c58401e0dc07cbed8907fbcc25fe.ctex"]
 
 [params]
 
