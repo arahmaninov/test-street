@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="test-street"
+run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-scene_manager="*res://scripts/scene_manager.gd"
+SceneSwitcher="*res://scripts/scene_switcher.gd"
 
 [display]
 

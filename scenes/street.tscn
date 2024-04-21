@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dn6wvo3e2qvwk"]
+[gd_scene load_steps=7 format=3 uid="uid://dn6wvo3e2qvwk"]
 
 [ext_resource type="Texture2D" uid="uid://bhqnsx12tsukf" path="res://assets/street/CP_V1.0.4.png" id="1_7f13g"]
+[ext_resource type="Script" path="res://scripts/street.gd" id="1_uo4rx"]
 [ext_resource type="PackedScene" uid="uid://d2t1j2kclwg16" path="res://scenes/shop.tscn" id="2_6umex"]
 [ext_resource type="PackedScene" uid="uid://dqv04x26b4srv" path="res://scenes/house.tscn" id="3_6cswl"]
 
@@ -609,7 +610,8 @@ texture = ExtResource("1_7f13g")
 [sub_resource type="TileSet" id="TileSet_ij4xj"]
 sources/0 = SubResource("TileSetAtlasSource_jr6c8")
 
-[node name="Street" type="Node2D"]
+[node name="Street" type="Node2D" groups=["levels"]]
+script = ExtResource("1_uo4rx")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, 1)
@@ -623,3 +625,9 @@ position = Vector2(92, 71)
 
 [node name="House" parent="." instance=ExtResource("3_6cswl")]
 position = Vector2(230, 73)
+
+[node name="ShopEntranceMarker" type="Marker2D" parent="."]
+position = Vector2(88, 114)
+
+[node name="HouseEntranceMarker" type="Marker2D" parent="."]
+position = Vector2(228, 116)

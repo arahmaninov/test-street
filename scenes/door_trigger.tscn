@@ -1,7 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcdqa3nvlphtm"]
+[gd_scene load_steps=2 format=3 uid="uid://wlkws62pakm5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3d83c"]
-size = Vector2(22, 15)
+size = Vector2(16, 23)
 
 [node name="door_trigger" type="Area2D"]
 collision_layer = 4

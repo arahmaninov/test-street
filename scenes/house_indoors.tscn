@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpykgtdm35lge"]
+[gd_scene load_steps=6 format=3 uid="uid://bpykgtdm35lge"]
 
 [ext_resource type="Texture2D" uid="uid://y01s7qhgik14" path="res://assets/indoor/pixel-cyberpunk-interior.png" id="1_v2kvb"]
 [ext_resource type="Script" path="res://scripts/house_indoors.gd" id="1_ysm6u"]
@@ -161,7 +161,10 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_06x4q")
 
-[node name="house_indoors" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_voxd0"]
+size = Vector2(31, 10)
+
+[node name="HouseIndoors" type="Node2D" groups=["levels"]]
 script = ExtResource("1_ysm6u")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -172,3 +175,14 @@ layer_1/tile_data = PackedInt32Array(65538, 196608, 7, 65539, 131072, 8, 65540, 
 
 [node name="EntranceMarker" type="Marker2D" parent="."]
 position = Vector2(207, 206)
+
+[node name="door_trigger" type="Area2D" parent="."]
+position = Vector2(203, 251)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_trigger"]
+position = Vector2(4.5, 0)
+shape = SubResource("RectangleShape2D_voxd0")
+debug_color = Color(0.686275, 0.501961, 0.0509804, 0.419608)
+
+[connection signal="body_entered" from="door_trigger" to="." method="_on_door_trigger_body_entered"]
