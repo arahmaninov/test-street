@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneSwitcher="*res://scripts/scene_switcher.gd"
+EventBus="*res://scripts/event_bus.gd"
 
 [display]
 
@@ -59,6 +60,7 @@ down={
 2d_physics/layer_1="player"
 2d_physics/layer_2="buildings"
 2d_physics/layer_3="door_triggers"
+2d_physics/layer_4="items"
 
 [rendering]
 

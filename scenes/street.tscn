@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn6wvo3e2qvwk"]
+[gd_scene load_steps=8 format=3 uid="uid://dn6wvo3e2qvwk"]
 
 [ext_resource type="Texture2D" uid="uid://bhqnsx12tsukf" path="res://assets/street/CP_V1.0.4.png" id="1_7f13g"]
 [ext_resource type="Script" path="res://scripts/street.gd" id="1_uo4rx"]
 [ext_resource type="PackedScene" uid="uid://d2t1j2kclwg16" path="res://scenes/shop.tscn" id="2_6umex"]
 [ext_resource type="PackedScene" uid="uid://dqv04x26b4srv" path="res://scenes/house.tscn" id="3_6cswl"]
+[ext_resource type="PackedScene" uid="uid://vu3b2lfd43hg" path="res://scenes/key.tscn" id="5_x115n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jr6c8"]
 texture = ExtResource("1_7f13g")
@@ -631,3 +632,6 @@ position = Vector2(88, 114)
 
 [node name="HouseEntranceMarker" type="Marker2D" parent="."]
 position = Vector2(228, 116)
+
+[node name="Key" parent="." instance=ExtResource("5_x115n")]
+position = Vector2(156, 37)
