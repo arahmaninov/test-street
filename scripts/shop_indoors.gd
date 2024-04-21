@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var entrance_marker: Marker2D = $entrance_marker
 var player: Player
-var level_data: Dictionary
+
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")

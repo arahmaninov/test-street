@@ -6,6 +6,7 @@ extends CharacterBody2D
 	get = get_health,
 	set = set_health
 @export var max_health: int = 10
+var keys: int
 
 
 func _ready() -> void:

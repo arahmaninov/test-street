@@ -13,18 +13,11 @@ func switch(path: String) -> void:
 
 
 func _deferred_switch_scene(path: String) -> void:
-	# get data from level
-	var data_to_transfer: Dictionary = current_level.level_data
-	
 	# get level name
 	previoius_level_name = current_level.name
 	
 	# change level
 	current_level.free()
 	var new_scene = load(path)
-	current_level = new_scene.instantiate()
-	
-	# transfer data from previous level
-	current_level.level_data = data_to_transfer
-	
+	current_level = new_scene.instantiate()	
 	get_tree().get_first_node_in_group("game").add_child(current_level)

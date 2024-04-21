@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ypyco"]
 radius = 6.0
 
-[node name="Key" type="Area2D"]
+[node name="ShopKey" type="Area2D"]
 collision_layer = 8
 script = ExtResource("1_koo6f")
 
