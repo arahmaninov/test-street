@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b53s83ngjb26c"]
+
+[ext_resource type="Script" path="res://scripts/orange.gd" id="1_4bt37"]
+[ext_resource type="Texture2D" uid="uid://yigue3udui8u" path="res://assets/items/orange.png" id="1_74mhb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7nd8c"]
+radius = 9.0
+
+[node name="orange" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_4bt37")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_74mhb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7nd8c")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

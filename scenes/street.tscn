@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dn6wvo3e2qvwk"]
+[gd_scene load_steps=12 format=3 uid="uid://dn6wvo3e2qvwk"]
 
 [ext_resource type="Texture2D" uid="uid://bhqnsx12tsukf" path="res://assets/street/CP_V1.0.4.png" id="1_7f13g"]
 [ext_resource type="Script" path="res://scripts/street.gd" id="1_uo4rx"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ua8sa50t8r0a" path="res://scenes/house_key.tscn" id="6_bydo3"]
 [ext_resource type="PackedScene" uid="uid://b7iytyv57hylv" path="res://scenes/empty_building.tscn" id="7_l87rh"]
 [ext_resource type="PackedScene" uid="uid://cxble0ne5utg6" path="res://scenes/lamp.tscn" id="8_2xvci"]
+[ext_resource type="PackedScene" uid="uid://yl2loecgt2ab" path="res://scenes/chilie.tscn" id="9_ger6a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jr6c8"]
 texture = ExtResource("1_7f13g")
@@ -1846,3 +1847,10 @@ position = Vector2(379, 75)
 
 [node name="Lamp" parent="." instance=ExtResource("8_2xvci")]
 position = Vector2(107, 206)
+
+[node name="Lamp2" parent="." instance=ExtResource("8_2xvci")]
+position = Vector2(381, 175)
+message = "The winter is coming"
+
+[node name="chilie" parent="." instance=ExtResource("9_ger6a")]
+position = Vector2(150, 158)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://yl2loecgt2ab"]
+
+[ext_resource type="Texture2D" uid="uid://byxwcfnpkusug" path="res://assets/items/chilie.png" id="1_ftmen"]
+[ext_resource type="Script" path="res://scripts/chilie.gd" id="1_npyep"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nbrq1"]
+
+[node name="chilie" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_npyep")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ftmen")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nbrq1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

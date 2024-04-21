@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpykgtdm35lge"]
+[gd_scene load_steps=8 format=3 uid="uid://bpykgtdm35lge"]
 
 [ext_resource type="Texture2D" uid="uid://y01s7qhgik14" path="res://assets/indoor/pixel-cyberpunk-interior.png" id="1_v2kvb"]
 [ext_resource type="Script" path="res://scripts/house_indoors.gd" id="1_ysm6u"]
+[ext_resource type="PackedScene" uid="uid://b53s83ngjb26c" path="res://scenes/orange.tscn" id="3_wcos8"]
+[ext_resource type="PackedScene" uid="uid://bo0ljxust3254" path="res://scenes/mushroom.tscn" id="4_o8oso"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_06x4q"]
 texture = ExtResource("1_v2kvb")
@@ -493,5 +495,11 @@ collision_layer = 4
 position = Vector2(4.5, 0)
 shape = SubResource("RectangleShape2D_voxd0")
 debug_color = Color(0.686275, 0.501961, 0.0509804, 0.419608)
+
+[node name="orange" parent="." instance=ExtResource("3_wcos8")]
+position = Vector2(143, 178)
+
+[node name="mushroom" parent="." instance=ExtResource("4_o8oso")]
+position = Vector2(326, 58)
 
 [connection signal="body_entered" from="door_trigger" to="." method="_on_door_trigger_body_entered"]

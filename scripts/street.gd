@@ -23,3 +23,6 @@ func items_setup() -> void:
 		$Key.queue_free()
 	if GameData.objects["house_key_taken"]:
 		$HouseKey.queue_free()
+	if GameData.objects["chilie_taken"]:
+		$chilie.queue_free()
+
