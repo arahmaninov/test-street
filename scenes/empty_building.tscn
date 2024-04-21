@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7iytyv57hylv"]
+
+[ext_resource type="Texture2D" uid="uid://cgkr3vknrnmuw" path="res://assets/street_animations/empty_building.png" id="1_8o5vj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8xsh"]
+size = Vector2(46, 39)
+
+[node name="EmptyBuilding" type="StaticBody2D"]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8o5vj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_y8xsh")
