@@ -37,6 +37,15 @@ func _physics_process(_delta: float) -> void:
 	var direction: Vector2 = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * speed
 	
+	if direction == Vector2.RIGHT:
+		$AnimationPlayer.play("right")
+	if direction == Vector2.LEFT:
+		$AnimationPlayer.play("left")
+	if direction == Vector2.UP:
+		$AnimationPlayer.play("up")
+	if direction == Vector2.DOWN:
+		$AnimationPlayer.play("down")
+	
 	move_and_slide()
 
 
