@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dn6wvo3e2qvwk"]
+[gd_scene load_steps=11 format=3 uid="uid://dn6wvo3e2qvwk"]
 
 [ext_resource type="Texture2D" uid="uid://bhqnsx12tsukf" path="res://assets/street/CP_V1.0.4.png" id="1_7f13g"]
 [ext_resource type="Script" path="res://scripts/street.gd" id="1_uo4rx"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://vu3b2lfd43hg" path="res://scenes/shop_key.tscn" id="5_6giac"]
 [ext_resource type="PackedScene" uid="uid://ua8sa50t8r0a" path="res://scenes/house_key.tscn" id="6_bydo3"]
 [ext_resource type="PackedScene" uid="uid://b7iytyv57hylv" path="res://scenes/empty_building.tscn" id="7_l87rh"]
+[ext_resource type="PackedScene" uid="uid://cxble0ne5utg6" path="res://scenes/lamp.tscn" id="8_2xvci"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jr6c8"]
 texture = ExtResource("1_7f13g")
@@ -1842,3 +1843,6 @@ position = Vector2(309, 144)
 
 [node name="EmptyBuilding" parent="." instance=ExtResource("7_l87rh")]
 position = Vector2(379, 75)
+
+[node name="Lamp" parent="." instance=ExtResource("8_2xvci")]
+position = Vector2(107, 206)
